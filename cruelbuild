@@ -85,7 +85,9 @@ models = {
     },
     'N976B': {
         'config': 'exynos9820-d2x_defconfig'
+    }
 }
+
 
 OBJTREE_SIZE_GB = 3
 
