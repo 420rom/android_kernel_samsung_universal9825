@@ -1,4 +1,4 @@
-name: Build 420rom Android 11 OneUI 3.1 Canary Kernel
+name: Build 420rom Android 11 AOSP Canary Kernel
 
 on: [push]
 
@@ -29,6 +29,7 @@ jobs:
                     model=${{ matrix.model }}      \
                     name=420rom-FUE5-v11.5.2-Can   \
                     toolchain=$TOOLCHAIN           \
+                    +always_permit                 \
                     +magisk=canary                 \
                     +nohardening                   \
                     +nodebug                       \
