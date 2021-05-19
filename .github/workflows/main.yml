@@ -1,4 +1,4 @@
-name: Build 420rom Android 11 OneUI 3.1 Release Kernel
+name: Build 420rom Android 11 OneUI 3.1 Canary Kernel
 
 on: [push]
 
@@ -27,9 +27,9 @@ jobs:
           ./cruelbuild config                      \
                     os_patch_level=2021-05         \
                     model=${{ matrix.model }}      \
-                    name=420rom-FUE5-v11.5.2-Rel   \
+                    name=420rom-FUE5-v11.5.2-Can   \
                     toolchain=$TOOLCHAIN           \
-                    +magisk                        \
+                    +magisk=canary                 \
                     +nohardening                   \
                     +nodebug                       \
                     +noatime                       \
@@ -109,7 +109,7 @@ jobs:
         if: env.INSTALLER == 'yes'
         uses: actions/upload-artifact@v2
         with:
-          name: 420rom-FUE5-v11.5.2-${{ matrix.model }}-Release-Kernel
+          name: 420rom-FUE5-v11.5.2-${{ matrix.model }}-Canary-Kernel
           path: installer/*
           if-no-files-found: error
       - name: Upload Kernel Images
@@ -123,6 +123,6 @@ jobs:
       - name: Upload Kernel Info
         uses: actions/upload-artifact@v2
         with:
-          name: ConfigurationInfo-420rom-FUE5-v11.5.2-${{ matrix.model }}-Release-Kernel
+          name: ConfigurationInfo-420rom-FUE5-v11.5.2-${{ matrix.model }}-Canary-Kernel
           path: config.*
           if-no-files-found: error

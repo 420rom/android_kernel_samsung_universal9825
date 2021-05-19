@@ -1267,10 +1267,10 @@ if __name__ == '__main__':
             dtbs.append('dtb-' + dtb + '.img')
         if features['empty_vbmeta']:
             kernels.append('vbmeta.img')
-        pack(configs, features, '420rom_Release_Kernel.zip', dtb_map, [*kernels, *dtbs, *dtbos])
+        pack(configs, features, '420rom_Canary_Kernel.zip', dtb_map, [*kernels, *dtbs, *dtbos])
 
         if check_env('FLASH_ZIP') and not check_env('FLASH'):
-            flash_zip('420rom_Release_Kernel.zip')
+            flash_zip('420rom_Canary_Kernel.zip')
 
     if 'mkimg' in stages:
         umount_tmpfs(objtree)
