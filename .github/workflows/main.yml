@@ -27,7 +27,7 @@ jobs:
           ./cruelbuild config                      \
                     os_patch_level=2021-05         \
                     model=${{ matrix.model }}      \
-                    name=420rom-FUE5-v11.5.2-Can   \
+                    name=420rom-FUE3-v11.5.2-Can   \
                     toolchain=$TOOLCHAIN           \
                     +always_permit                 \
                     +magisk=canary                 \
@@ -111,20 +111,20 @@ jobs:
         if: env.INSTALLER == 'yes'
         uses: actions/upload-artifact@v2
         with:
-          name: 420rom-FUE5-v11.5.2-${{ matrix.model }}-Canary-Kernel
+          name: 420rom-FUE3-v11.5.2-${{ matrix.model }}-Canary-Kernel
           path: installer/*
           if-no-files-found: error
       - name: Upload Kernel Images
         if: env.INSTALLER != 'yes'
         uses: actions/upload-artifact@v2
         with:
-          name: 420rom_Release_Kernel-${{ matrix.model }}
+          name: 420rom_Canary_Kernel-${{ matrix.model }}
           path: '*.img'
           if-no-files-found: error
 
       - name: Upload Kernel Info
         uses: actions/upload-artifact@v2
         with:
-          name: ConfigurationInfo-420rom-FUE5-v11.5.2-${{ matrix.model }}-Canary-Kernel
+          name: ConfigurationInfo-420rom-FUE3-v11.5.2-${{ matrix.model }}-Canary-Kernel
           path: config.*
           if-no-files-found: error
