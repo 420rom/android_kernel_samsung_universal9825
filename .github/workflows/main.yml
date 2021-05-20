@@ -27,7 +27,7 @@ jobs:
           ./cruelbuild config                      \
                     os_patch_level=2021-05         \
                     model=${{ matrix.model }}      \
-                    name=420rom-FUE5-v11.5.2-Rel   \
+                    name=420rom-FUE3-v11.5.2-Rel   \
                     toolchain=$TOOLCHAIN           \
                     +always_permit                 \
                     +magisk                        \
@@ -111,7 +111,7 @@ jobs:
         if: env.INSTALLER == 'yes'
         uses: actions/upload-artifact@v2
         with:
-          name: 420rom-FUE5-v11.5.2-${{ matrix.model }}-Release-Kernel
+          name: 420rom-FUE3-v11.5.2-${{ matrix.model }}-Release-Kernel
           path: installer/*
           if-no-files-found: error
       - name: Upload Kernel Images
@@ -125,6 +125,6 @@ jobs:
       - name: Upload Kernel Info
         uses: actions/upload-artifact@v2
         with:
-          name: ConfigurationInfo-420rom-FUE5-v11.5.2-${{ matrix.model }}-Release-Kernel
+          name: ConfigurationInfo-420rom-FUE3-v11.5.2-${{ matrix.model }}-Release-Kernel
           path: config.*
           if-no-files-found: error
